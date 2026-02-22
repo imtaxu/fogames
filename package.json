@@ -1,0 +1,69 @@
+{
+	"name": "fogames",
+	"displayName": "Games",
+	"homepage": "https://imtaxu.github.io/fogames",
+	"description": "Zero-friction micro-games for VS Code. Keep your flow while waiting for your AI agent to write code.",
+	"version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/imtaxu/fogames.git"
+	},
+	"publisher": "imtaxu",
+	"icon": "icon.png",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.80.0"
+	},
+	"keywords": [
+		"game",
+		"games",
+		"2048",
+		"pacman",
+		"tetris",
+		"dino"
+	],
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [],
+	"main": "./out/main.js",
+	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "fogames-explorer",
+					"title": "FoGames",
+					"icon": "media/icon.svg"
+				}
+			]
+		},
+		"views": {
+			"fogames-explorer": [
+				{
+					"type": "webview",
+					"id": "fogames.sidebarView",
+					"name": "Micro-Breaks",
+					"icon": "media/icon.svg",
+					"contextualTitle": "FoGames"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run esbuild",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"package": "npm run compile",
+		"esbuild": "npm run esbuild-base -- --minify",
+		"esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
+		"esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
+		"deploy": "npm run esbuild && gh-pages -d publish"
+	},
+	"devDependencies": {
+		"@types/node": "18.x",
+		"@types/vscode": "^1.80.0",
+		"esbuild": "^0.18.15",
+		"gh-pages": "^6.3.0",
+		"typescript": "^5.1.3"
+	}
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src {{cspSource}} 'unsafe-inline'; script-src 'nonce-{{nonce}}'; img-src {{cspSource}} https:;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoGames</title>
+    <link href="{{stylesUri}}" rel="stylesheet">
+</head>
+<body>
+    <div class="tabs">
+        <div class="tab active" data-target="tab-games">FoGames</div>
+        <div class="tab" data-target="tab-about">About</div>
+    </div>
+    
+    <div id="tab-games" class="tab-content active">
+        <div id="game-grid" class="game-grid">
+            <div class="game-card" data-game="2048">
+                <img src="{{icon2048Uri}}" alt="2048" class="game-icon-img" />
+            </div>
+            <div class="game-card" data-game="tetris">
+                <img src="{{iconTetrisUri}}" alt="Tetris" class="game-icon-img" />
+            </div>
+            <div class="game-card" data-game="pacman">
+                <img src="{{iconPacmanUri}}" alt="Pacman" class="game-icon-img" />
+            </div>
+            <div class="game-card" data-game="dino">
+                <img src="{{iconDinoUri}}" alt="Dino Run" class="game-icon-img" />
+            </div>
+        </div>
+
+        <div id="game-player" class="hidden game-player">
+            <div id="player-content">
+                <div id="game-2048-container" class="game-container">
+                    <div class="score-board">
+                        <div class="score-box">Score: <span id="score-2048">0</span></div>
+                    </div>
+                    <div id="grid-2048" class="grid-2048"></div>
+                    <div class="game-controls">
+                        <button class="vscode-button btn-reset" data-target="2048">🔄 Restart</button>
+                        <button class="vscode-button btn-back">⬅ Back</button>
+                    </div>
+                </div>
+                
+                <div id="game-tetris-container" class="hidden game-container">
+                    <div class="score-board">
+                        <div class="score-box">Score: <span id="score-tetris">0</span></div>
+                    </div>
+                    <canvas id="canvas-tetris" width="240" height="480" style="background:#000;border-radius:4px;border:1px solid var(--vscode-panel-border);display:block;margin:0 auto;"></canvas>
+                    <div class="game-controls">
+                        <button class="vscode-button btn-start" data-target="tetris">▶ Start</button>
+                        <button class="vscode-button btn-reset" data-target="tetris">🔄 Restart</button>
+                        <button class="vscode-button btn-back">⬅ Back</button>
+                    </div>
+                </div>
+                
+                <div id="game-dino-container" class="hidden game-container">
+                    <div class="score-board">
+                        <div class="score-box">
+                            SCORE: <span id="score-dino">0</span>
+                            <span style="margin-left:20px;color:var(--vscode-descriptionForeground)">HI: <span id="hiscore-dino">0</span></span>
+                        </div>
+                    </div>
+                    <canvas id="canvas-dino" width="300" height="200" style="background:var(--vscode-editorWidget-background);border:1px solid var(--vscode-panel-border);border-radius:4px;width:100%;max-width:300px;display:block;margin:0 auto;"></canvas>
+                    <div style="text-align:center;margin-top:10px;opacity:0.6;font-size:12px;">Press SPACE/UP to jump.</div>
+                    <div class="game-controls">
+                        <button class="vscode-button btn-start" data-target="dino">▶ Start</button>
+                        <button class="vscode-button btn-reset" data-target="dino">🔄 Restart</button>
+                        <button class="vscode-button btn-back">⬅ Back</button>
+                    </div>
+                </div>
+                
+                <div id="game-pacman-container" class="hidden game-container">
+                    <div class="score-board">
+                        <div class="score-box">Score: <span id="score-pacman">0</span></div>
+                    </div>
+                    <canvas id="canvas-pacman" width="240" height="240" style="background:#000;border-radius:4px;border:1px solid var(--vscode-panel-border);display:block;margin:0 auto;"></canvas>
+                    <div class="game-controls">
+                        <button class="vscode-button btn-start" data-target="pacman">▶ Start</button>
+                        <button class="vscode-button btn-reset" data-target="pacman">🔄 Restart</button>
+                        <button class="vscode-button btn-back">⬅ Back</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab-about" class="tab-content">
+        <div class="about-wrapper">
+            <h2 class="about-title">⚡ FoGames: Agent Micro-Breaks</h2>
+            
+            <p class="about-text">
+                FoGames is designed to keep your flow state intact during those gaps while your AI agent (Cursor, Windsurf, etc.) is thinking or generating code. 
+            </p>
+            <p class="about-text">
+                Built with strict rules: <strong>Zero idle RAM</strong> when hidden, <strong>100% privacy</strong>, and fully <strong>state-preserved</strong> gameplay.
+            </p>
+
+            <div class="about-section">
+                <h3>🎮 We Need Your Games!</h3>
+                <p class="about-text">
+                    Missing your favorite micro-game? Have an idea for a simple 15-second distraction? We welcome Pull Requests and feature requests!
+                </p>
+                <button class="vscode-button secondary-btn external-link" data-url="https://github.com/imtaxu/fogames/issues">
+                    Request a Game on GitHub
+                </button>
+            </div>
+
+            <div class="about-section support-section">
+                <h3>☕ Support the Developer</h3>
+                <p class="about-text">
+                    If FoGames saves your focus and prevents you from doom-scrolling on social media, consider buying me a coffee to support the open-source development!
+                </p>
+                <button class="vscode-button primary-btn sponsor-btn external-link" data-url="https://github.com/sponsors/imtaxu">
+                    <span>💖</span> Sponsor / Buy me a coffee
+                </button>
+            </div>
+
+            <div class="about-footer">
+                <p>Created by the team behind <a href="#" class="text-link external-link" data-url="https://foworker.com">Foworker</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="sponsor-footer" class="footer" style="display:none;">
+        <img id="sponsor-image" src="" alt="Sponsor" />
+    </div>
+
+    <script nonce="{{nonce}}" src="{{game2048Uri}}"></script>
+    <script nonce="{{nonce}}" src="{{gameTetrisUri}}"></script>
+    <script nonce="{{nonce}}" src="{{gameDinoUri}}"></script>
+    <script nonce="{{nonce}}" src="{{gamePacmanUri}}"></script>
+    <script nonce="{{nonce}}" src="{{mainJsUri}}"></script>
+</body>
+</html>

@@ -1,2 +1,7 @@
 .DS_Store
-.agent
+.vscodeignore
+.gitignore
+.agents
+.vscode
+.vsix
+node_modules

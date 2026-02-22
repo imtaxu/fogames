@@ -1,0 +1,7 @@
+.DS_Store
+.vscodeignore
+.gitignore
+.agents
+.vscode
+.vsix
+node_modules

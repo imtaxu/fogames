@@ -60,6 +60,9 @@ body {
 
 #sponsor-image {
     width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    text-align: center;
     max-height: 50px;
     object-fit: cover;
     display: block;

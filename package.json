@@ -1,27 +1,25 @@
 {
 	"name": "fogames",
-	"displayName": "Games",
+	"displayName": "FoGames - Micro-Breaks",
+	"publisher": "imtaxu",
 	"homepage": "https://imtaxu.github.io/fogames",
-	"description": "Zero-friction micro-games for VS Code. Keep your flow while waiting for your AI agent to write code.",
+	"description": "Zero-friction micro-games for VS Code. Keep your flow while waiting for builds and tasks.",
 	"version": "1.0.0",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/imtaxu/fogames.git"
 	},
-	"publisher": "imtaxu",
 	"icon": "icon.png",
 	"license": "MIT",
 	"engines": {
 		"vscode": "^1.80.0"
 	},
 	"keywords": [
-		"game",
-		"games",
-		"2048",
-		"pacman",
-		"tetris",
-		"dino"
-	],
+        "game",
+        "games",
+        "arcade",
+        "retro"
+    ],
 	"categories": [
 		"Other"
 	],

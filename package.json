@@ -3,7 +3,7 @@
 	"displayName": "FoGames - Micro-Breaks",
 	"publisher": "imtaxu",
 	"homepage": "https://imtaxu.github.io/fogames",
-	"description": "Zero-friction micro-games for VS Code. Keep your flow while waiting for builds and tasks.",
+	"description": "Zero-friction interactive micro-breaks for your editor. Keep your flow while waiting for builds and tasks.",
 	"version": "1.0.0",
 	"repository": {
 		"type": "git",
@@ -15,10 +15,12 @@
 		"vscode": "^1.80.0"
 	},
 	"keywords": [
-        "game",
-        "games",
+		"2048",
         "arcade",
-        "retro"
+		"retro",
+		"play",
+		"recreation",
+		"interactive"
     ],
 	"categories": [
 		"Other"
